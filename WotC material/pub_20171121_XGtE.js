@@ -656,13 +656,6 @@ AddSubClass("cleric", "grave domain", {
 			action : [["reaction", ""]],
 			description : "\n   " + "As a reaction, I turn a critical hit to me or an ally I see within 30 ft to a normal hit"
 		},
-		"subclassfeature8" : {
-			name : "Potent Spellcasting",
-			source : [["X", 20]],
-			minlevel : 8,
-			description : desc("I add my Wisdom modifier to the damage I deal with my cleric cantrips"),
-			calcChanges : GenericClassFeatures["potent spellcasting"].calcChanges
-		},
 		"subclassfeature17" : {
 			name : "Keeper of Souls",
 			source : [["X", 20]],
@@ -2473,12 +2466,6 @@ AddSubClass("warlock", "the celestial", {
 					},
 					"Cantrips and spells that fire or radiant damage get my Charisma modifier added to their damage to one target."
 				],
-				spellAdd : [
-					function (spellKey, spellObj, spName) {
-						if (!spellObj.psionic) return genericSpellDmgEdit(spellKey, spellObj, "fire|radiant", "Cha", true);
-					},
-					"Cantrips and spells that fire or radiant damage get my Charisma modifier added to their damage to one target."
-				]
 			}
 		},
 		"subclassfeature10" : {
